@@ -1,0 +1,10 @@
+.feed_container {
+  width: 100%;
+  /* gap: 20px; */
+}
+.feed {
+  flex-basis: 100%;
+  margin: 1.2%;
+  width: 100%;
+  /* overflow-y: scroll; */
+}

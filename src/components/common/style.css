@@ -1,0 +1,200 @@
+.navbar {
+position: sticky;
+  background: var(--Dark);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5% 2%;
+  
+}
+.navbar .logo_hamburger {
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.navbar .logo_hamburger .hamburger {
+  color: var(--White);
+  cursor: pointer;
+  font-size: 25px;
+}
+.navbar .logo_hamburger .logo {
+  font-size: 25px;
+  color: var(--Lighter);
+  font-weight: 900;
+}
+.navbar .nav-icons {
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.navbar .nav-icons .upload_video_icon {
+  color: var(--White);
+  cursor: pointer;
+  font-size: 30px;
+}
+.navbar .nav-icons .notification_icon {
+  color: var(--White);
+  cursor: pointer;
+  font-size: 20px;
+}
+.navbar .nav-icons img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: 2px solid var(--Lighter);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+/* =============SEARCH CARD================  */
+.search_card {
+  align-items: center;
+}
+.search_card .search_input {
+  align-items: center;
+  width: 450px;
+  max-width: 100%;
+  /* padding: 5px; */
+  overflow: hidden;
+  border: 1px solid var(--Lighter);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.search_card .search_input .search_icon1 {
+  color: var(--Lighter);
+  padding-left: 5px;
+  font-size: 30px;
+  /* display: none; */
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+.search_card .search_input input {
+  width: 100%;
+  color: var(--White);
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-left: 10px;
+}
+.search_card .search_input input:focus .search_icon1 {
+  display: block !important;
+}
+.search_card .search_input .search_input_icon {
+  color: var(--Lighter);
+  background: var(--Darker);
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+.search_card .search_input .search_input_icon .search_icon2 {
+  font-size: 20px;
+}
+.search_card .mic_icon {
+  color: var(--Lighter);
+  font-size: 40px !important;
+  background: var(--Darker);
+  padding: 10px;
+  margin-left: 15px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+}
+/* ========================SIDE NAVBAR=======================  */
+.SideNav {
+  background: var(--Darker);
+  /* width: 200px; */
+  flex-basis: 20%;
+  padding: 1%;
+  gap: 20px;
+  overflow-y: scroll;
+}
+.SideNav__item {
+  width: 100%;
+  align-items: center;
+  font-size: 14px;
+  /*font-weight: 500;
+  */
+  gap: 6px;
+  color: var(--Lighter);
+
+  padding: 8px 25px;
+}
+.SideNav__item:hover {
+  color: var(--Darker);
+  background: var(--Light);
+  padding: 8px 25px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+/* ======================VIDEOFEED CARD================ */
+.VideoFeedCard {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  cursor: pointer;
+}
+.VideoFeedCard .VideoFeedCard__Thumbnail {
+  width: 250px;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.VideoFeedCard .VideoFeedCard__Thumbnail img {
+  z-index: 9;
+  width: 250px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.VideoFeedCard .VideoFeedCard__Thumbnail video {
+  display: none;
+  width: 250px;
+}
+.VideoFeedCard .VideoFeedCard_details {
+  padding: 3%;
+  justify-content: space-between;
+}
+.VideoFeedCard .VideoFeedCard_details img {
+  width: 40px;
+  height: 40px;
+}
+
+.VideoFeedCard .VideoFeedCard_details .title h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+.VideoFeedCard .VideoFeedCard_details .title .channel_name {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--Darker);
+  align-items: center;
+  gap: 3px;
+}
+.VideoFeedCard .VideoFeedCard_details .title .views_date {
+  font-size: 11px;
+  line-height: 16px;
+  color: var(--Darker);
+}
+.VideoFeedCard .VideoFeedCard_details .dots {
+  font-size: 25px;
+  color: var(--Darker);
+}
+.VideoFeedCard .VideoFeedCard_details .title {
+}
