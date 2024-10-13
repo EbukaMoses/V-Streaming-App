@@ -7,7 +7,12 @@ const Feed = () => {
   return (
     <div className="feed_container flex">
       <SideNav />
-      <div className="feed grid5">
+      <div className="feed flex">
+        <VideoFeedCard />
+        <VideoFeedCard />
+        <VideoFeedCard />
+        <VideoFeedCard />
+        <VideoFeedCard />
         <VideoFeedCard />
         <VideoFeedCard />
         <VideoFeedCard />

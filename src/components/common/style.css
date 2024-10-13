@@ -1,10 +1,10 @@
 .navbar {
-position: sticky;
+  position: sticky;
+  width: 100%;
   background: var(--Dark);
   justify-content: space-between;
   align-items: center;
   padding: 0.5% 2%;
-  
 }
 .navbar .logo_hamburger {
   justify-content: space-between;
@@ -56,7 +56,6 @@ position: sticky;
   align-items: center;
   width: 450px;
   max-width: 100%;
-  /* padding: 5px; */
   overflow: hidden;
   border: 1px solid var(--Lighter);
   border-radius: 20px;
@@ -69,7 +68,6 @@ position: sticky;
   color: var(--Lighter);
   padding-left: 5px;
   font-size: 30px;
-  /* display: none; */
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -112,28 +110,29 @@ position: sticky;
 }
 /* ========================SIDE NAVBAR=======================  */
 .SideNav {
+  position: sticky;
   background: var(--Darker);
-  /* width: 200px; */
-  flex-basis: 20%;
-  padding: 1%;
+  height: 100vh;
+  flex-basis: 10%;
+  padding: 1% 0.5%;
   gap: 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;
 }
 .SideNav__item {
   width: 100%;
   align-items: center;
   font-size: 14px;
-  /*font-weight: 500;
-  */
   gap: 6px;
   color: var(--Lighter);
 
-  padding: 8px 25px;
+  padding: 8px;
 }
 .SideNav__item:hover {
   color: var(--Darker);
   background: var(--Light);
-  padding: 8px 25px;
+  padding: 8px 8px;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -143,6 +142,8 @@ position: sticky;
 
 /* ======================VIDEOFEED CARD================ */
 .VideoFeedCard {
+  width: 250px;
+  background: var(--White);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   cursor: pointer;
@@ -152,23 +153,33 @@ position: sticky;
   height: 200px;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 .VideoFeedCard .VideoFeedCard__Thumbnail img {
   z-index: 9;
   width: 250px;
-  border-radius: 10px;
+  object-fit: contain;
+  /* border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  -o-border-radius: 10px; */
+}
+.VideoFeedCard .VideoFeedCard__Thumbnail .ReactPlayer {
+  z-index: 9;
+  width: 250px !important;
+  object-fit: contain;
+  /* border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px; */
 }
 .VideoFeedCard .VideoFeedCard__Thumbnail video {
   display: none;
   width: 250px;
 }
 .VideoFeedCard .VideoFeedCard_details {
-  padding: 3%;
+  padding: 5% 3%;
   justify-content: space-between;
 }
 .VideoFeedCard .VideoFeedCard_details img {
@@ -196,5 +207,5 @@ position: sticky;
   font-size: 25px;
   color: var(--Darker);
 }
-.VideoFeedCard .VideoFeedCard_details .title {
-}
+
+/* ============PROFILE CARD===============  */
