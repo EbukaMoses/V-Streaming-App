@@ -1,18 +1,28 @@
 import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-import { BiSolidTachometer } from "react-icons/bi";
-import { SiYoutubeshorts } from "react-icons/si";
+import { Navbar } from "../../utils/navBar";
 
-const SideNav = () => {
+
+const SideNav = ({ selectedCategory, setSelectedCategory }) => {
   return (
     <div className="SideNav flex flex-col">
-      <Link to="/" className="SideNav__item flex">
-        <BiSolidTachometer />
-        Home
-      </Link>
-      <Link to="/" className="SideNav__item flex">
-        <SiYoutubeshorts />
+      {Navbar.map((item) => (
+        <Link
+          to="/"
+          className={`SideNav__item flex ${
+            item.name === selectedCategory && "active"
+          }`}
+          onClick={() => setSelectedCategory(item.name)}
+          key={item.name}
+        >
+          {/* {item.icon} */}
+          {item.name}
+        </Link>
+      ))}
+
+      {/* <Link to="/" className="SideNav__item flex">
+       
         Short
       </Link>
       <Link to="/" className="SideNav__item flex">
@@ -34,7 +44,7 @@ const SideNav = () => {
       <Link to="/" className="SideNav__item flex">
         <SiYoutubeshorts />
         Downloads
-      </Link>
+      </Link> */}
     </div>
   );
 };

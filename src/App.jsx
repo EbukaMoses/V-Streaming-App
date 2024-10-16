@@ -11,18 +11,20 @@ import Profile from "./components/pages/Profile";
 function App() {
   const [count, setCount] = useState(0);
 
-  return <>
-    <BrowserRouter>
-    <Navbar />
-      <Routes>
-        <Route path="/" element={<Feed />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/video/:id" element={<VideoDetail />} />
-        <Route path="/channel/:id" element={<ChannelDetail />} />
-        <Route path="/search/:searchTeam" element={<SearchFeed />} />
-      </Routes>
-    </BrowserRouter>
-  </>;
+  return (
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Feed />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/video/:id" element={<VideoDetail />} />
+          <Route path="/channel/:id" element={<Profile />} />
+          <Route path="/search/:searchTeam" element={<SearchFeed />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;

@@ -117,7 +117,7 @@
   padding: 1% 0.5%;
   gap: 20px;
   overflow-y: auto;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none;
 }
 .SideNav__item {
@@ -129,7 +129,8 @@
 
   padding: 8px;
 }
-.SideNav__item:hover {
+.SideNav__item:hover,
+SideNav__item.active {
   color: var(--Darker);
   background: var(--Light);
   padding: 8px 8px;
@@ -181,14 +182,20 @@
 .VideoFeedCard .VideoFeedCard_details {
   padding: 5% 3%;
   justify-content: space-between;
+  gap: 10px;
 }
 .VideoFeedCard .VideoFeedCard_details img {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .VideoFeedCard .VideoFeedCard_details .title h3 {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
 }
 .VideoFeedCard .VideoFeedCard_details .title .channel_name {

@@ -1,10 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import SideNav from "../common/SideNav";
 import user from "/images/user.jpg";
 import banner from "/images/banner.png";
 
+import { fetchApi } from "../../utils/data";
+
 const Profile = () => {
+  const [channel, setChannel] = useState(null);
+  const [video, setVideo] = useState([])
+
+  const { id } = useParams();
+
+  console.log(channel);
+
+  useEffect(() => {
+    fetchApi(`channels?part="snippet&id=${id}`).then((data) =>
+      setChannel(data?.items[0])
+    );
+    fetchApi(`search?channelId=${id}&part="snippet&order=date`).then((data) =>
+      setVideo(data?.items)
+    );
+  }, [id]);
+
   return (
     <div className="Profile_container flex">
       <SideNav />
