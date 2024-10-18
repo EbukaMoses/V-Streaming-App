@@ -5,41 +5,61 @@ import user from "/images/user.jpg";
 import banner from "/images/banner.png";
 
 import { fetchApi } from "../../utils/data";
+import VideoFeedCard from "../common/VideoFeedCard";
 
 const Profile = () => {
   const [channel, setChannel] = useState(null);
-  const [video, setVideo] = useState([])
+  const [videos, setVideos] = useState([]);
 
   const { id } = useParams();
 
-  console.log(channel);
+  // console.log(channel);
+  console.log(videos);
 
   useEffect(() => {
-    fetchApi(`channels?part="snippet&id=${id}`).then((data) =>
+    fetchApi(`channels?part=snippet&id=${id}`).then((data) =>
       setChannel(data?.items[0])
     );
-    fetchApi(`search?channelId=${id}&part="snippet&order=date`).then((data) =>
-      setVideo(data?.items)
+    fetchApi(`search?channelId=${id}&part=snippet&order=date`).then((data) =>
+      setVideos(data?.items)
     );
   }, [id]);
+
+  function formatNumber(num) {
+    if (num >= 1000000) {
+      return (num / 1000000).toFixed(1) + "M"; // Converts to "M" for millions
+    } else if (num >= 1000) {
+      return (num / 1000).toFixed(1) + "k"; // Converts to "k" for thousands
+    } else {
+      return num; // Returns the number itself if less than 1000
+    }
+  }
 
   return (
     <div className="Profile_container flex">
       <SideNav />
       <div className="feed flex flex-col">
         <div className="Profile_banner">
-          <img src={banner} alt="" />
+          <img
+            src={channel?.snippet?.thumbnails?.default?.url}
+            alt={channel?.snippet?.localized?.title}
+          />
         </div>
         <div className="Profile_content flex">
-          <img src={user} alt="" />
+          <img
+            src={channel?.snippet?.thumbnails?.default?.url}
+            alt={channel?.snippet?.localized?.title}
+          />
           <div className="Profile_details flex flex-col">
-            <h3>Ebuka Moses</h3>
-            <span>@ebukamoses • 10.7K subscribers • 474 videos</span>
+            <h3>{channel?.snippet?.localized?.title}</h3>
             <span>
-              Welcome to Ebuka Moses Channel. Here you will find a variety of
-              videos on Lifestyle
+              {channel?.snippet?.customUrl} •{" "}
+              {formatNumber(channel?.statistics?.subscriberCount)}
+              subscribers • {formatNumber(channel?.statistics?.videoCount)}
+              videos
             </span>
-            <Link to="/">youtube.com/@ebukamoses</Link>
+            <span>{channel?.snippet?.description.slice(0, 150)}...</span>
+            <Link to="/">youtube.com/{channel?.snippet?.customUrl}</Link>
           </div>
         </div>
         <div className="Profile_tab flex">
@@ -48,7 +68,10 @@ const Profile = () => {
           <Link to="/">Short</Link>
           <Link to="/">Playlist</Link>
         </div>
-        <div className="Profile_videos">videos</div>
+        <div className="Profile_videos">
+          <VideoFeedCard videos={videos} />
+          hello
+        </div>
       </div>
     </div>
   );
